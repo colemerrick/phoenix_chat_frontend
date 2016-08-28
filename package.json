@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cover": "nyc -x '**/*spec.js' -n 'app' -r text -r html -r lcov npm test",
-    "test": "mocha --require babel-register --require .test-setup.js -R spec app/**/spec.js"
+    "test": "mocha --require babel-register --require .test-setup.js -R spec app/**/spec.js",
+    "cover": "nyc -x '**/*spec.js' -n 'app' -r text -r html -r lcov npm test"
   },
   "author": "",
   "license": "ISC",
@@ -26,7 +25,8 @@
     "react-addons-test-utils": "^15.3.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.0"
+    "webpack-dev-server": "^1.15.0",
+    "whatwg-fetch": "^1.0.0"
   },
   "dependencies": {
     "history": "^3.0.0",
