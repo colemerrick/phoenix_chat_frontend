@@ -4,16 +4,26 @@ import style from "./style.css"
 
 import Button from "../Button"
 
+import { connect } from "react-redux"
+
+import Actions from "../../redux/actions"
+
 export class Login extends React.Component {
   constructor(props) {
     super(props)
     this.submit = this.submit.bind(this)
   }
-  submit(e) {
-    console.log("Submit button clicked")
+
+  submit() {
+    const user = {
+      email: document.getElementById("signup-email").value,
+      password: document.getElementById("signup-password").value
+    }
+    this.props.dispatch(Actions.userLogin(user))
   }
 
   render() {
+    console.log(this.props.user)
     return (
       <div className={style.wrapper}>
         <div className={style.form}>
@@ -43,4 +53,10 @@ export class Login extends React.Component {
   }
 }
 
-export default cssModules(Login, style)
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(cssModules(Login, style))
