@@ -1,13 +1,29 @@
 import assign from "lodash.assign"
 import { combineReducers } from "redux"
 
-function user(state = {}, action) {
+function user(state = {
+  email: "",
+  username: "",
+  id: ""
+}, action) {
+  if (!action.payload || !action.payload.user) {
+    return state
+  }
+
+  const { email, username, id } = action.payload.user
+
   switch (action.type) {
     case "USER_NEW":
-      return state
+      return assign({}, state, {
+        email,
+        username,
+        id
+      })
     case "USER_LOGIN":
       return assign({}, state, {
-        email: action.payload.user.email
+        email,
+        username,
+        id
       })
     default: return state
   }
