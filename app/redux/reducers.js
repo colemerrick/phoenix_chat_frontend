@@ -25,6 +25,12 @@ function user(state = {
         username,
         id
       })
+    case "USER_AUTH":
+      return assign({}, state, {
+        email,
+        username,
+        id
+      })
     default: return state
   }
 }

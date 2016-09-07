@@ -11,9 +11,11 @@ import "./styles/reset.css"
 import { Provider } from "react-redux"
 import store from "./redux/store"
 
-const App = (props) => {
-  return (<div> { props.children } </div>)
-}
+import App from "./components/App"
+
+// const App = (props) => {
+//   return (<div> { props.children } </div>)
+// }
 
 ReactDOM.render(
   <Provider store={store}>
