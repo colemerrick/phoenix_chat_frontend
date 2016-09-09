@@ -30,7 +30,11 @@ module.exports = {
   },
   resolve: {
     // modulesDirectories: ['node_modules'],
-    extensions: [ '', '.js', '.css' ]
+    extensions: [ '', '.js', '.css' ],
+    fallback: path.join(__dirname, "node_modules")
+  },
+  resolveLoader: {
+    fallback: path.join(__dirname, "node_modules")
   },
   postcss: function () {
     return [cssnext]

@@ -9,6 +9,8 @@ import { connect } from "react-redux"
 
 import Chat from "../Chat"
 
+import PhoenixChat from 'phoenix-chat'
+
 export class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -47,7 +49,11 @@ export class Home extends React.Component {
 
   render() {
     if (this.props.user.email) {
-      return (<Chat />)
+      return (
+        <Chat>
+          <PhoenixChat />
+        </Chat>
+      )
     }
     return (
       <div className={style.leader}>
@@ -55,6 +61,9 @@ export class Home extends React.Component {
         {this.state.formState === "signup" ? <Signup /> : null}
         {this.state.formState === "login" ? <Login /> : null}
         { this.renderToggleContent() }
+
+        <PhoenixChat />
+        
         <img
           role="presentation"
           className={style.circles}
