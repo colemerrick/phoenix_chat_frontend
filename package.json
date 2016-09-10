@@ -32,6 +32,7 @@
   "dependencies": {
     "history": "^3.0.0",
     "lodash.assign": "^4.2.0",
+    "phoenix": "^1.2.0",
     "react": "^15.3.1",
     "react-css-modules": "^3.7.10",
     "react-dom": "^15.3.1",
