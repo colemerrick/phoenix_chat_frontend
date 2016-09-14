@@ -28,6 +28,14 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env": {
+        API_HOST: JSON.stringify('http://localhost:4000'),
+        SOCKET_HOST: JSON.stringify('ws://localhost:4000/socket')
+      }
+    })
+  ],
   resolve: {
     // modulesDirectories: ['node_modules'],
     extensions: [ '', '.js', '.css' ],
